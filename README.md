@@ -7,5 +7,6 @@ Após fazer o clone do projeto execute o comando mvn clean install.
 As URL do sistema são:
 
 http://localhost:8080/autores
+
 http://localhost:8080/livros
 
