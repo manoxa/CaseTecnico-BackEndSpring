@@ -10,7 +10,6 @@ Após fazer o clone do projeto execute os seguintes passos:
 3 - Execute o comando mvn clean install.
 4 - Após a mensagem de build success do maven, verificar as tabelas do autor e Livro. 
 
-
 As URLs do sistema são:
 
 http://localhost:8080/autores
