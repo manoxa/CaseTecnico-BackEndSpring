@@ -18,29 +18,29 @@ public class LivrosService {
 
 	@Autowired
 	private LivrosRepository livrosRepository;
-	
+
 	@Autowired
 	private ComentariosRepository comentariosRepository;
-	
+
 	public List<Livro> listar() {
 		return livrosRepository.findAll();
 	}
-	
+
 	public Livro buscar(Long id) {
 		Livro livro = livrosRepository.getOne(id);
-		
-		if(livro == null) {
+
+		if (livro == null) {
 			throw new LivroNaoEncontradoException("O livro não pôde ser encontrado.");
 		}
-		
+
 		return livro;
 	}
-	
+
 	public Livro salvar(Livro livro) {
 		livro.setId(null);
 		return livrosRepository.save(livro);
 	}
-	
+
 	public void deletar(Long id) {
 		try {
 			Livro livro = buscar(id);
@@ -49,29 +49,28 @@ public class LivrosService {
 			throw new LivroNaoEncontradoException("O livro não pôde ser encontrado.");
 		}
 	}
-	
+
 	public void atualizar(Livro livro) {
 		verificarExistencia(livro);
 		livrosRepository.save(livro);
 	}
-	
+
 	private void verificarExistencia(Livro livro) {
 		buscar(livro.getId());
 	}
-	
+
 	public Comentario salvarComentario(Long livroId, Comentario comentario) {
 		Livro livro = buscar(livroId);
-		
+
 		comentario.setLivro(livro);
 		comentario.setData(new Date());
-		
 		return comentariosRepository.save(comentario);
 	}
-	
+
 	public List<Comentario> listarComentarios(Long livroId) {
 		Livro livro = buscar(livroId);
-		
+
 		return livro.getComentarios();
 	}
-	
+
 }
