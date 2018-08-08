@@ -22,6 +22,8 @@ select * from autor;
 
 select * from livro;
 
+select * from comentario;
+
 # As URLs do sistema são:
 
 http://localhost:8080/autores
