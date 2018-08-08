@@ -14,7 +14,7 @@ Após fazer o clone do projeto execute os seguintes passos:
 
 4 - Após a mensagem de build success do maven, verificar as tabelas do autor e Livro. 
 
-execute os seguintes comandos para verificar os valores inseridos pelo testes unitários.
+execute os seguintes comandos para verificar os valores inseridos pelo teste unitários.
 
 use casetecnicodb;
 
